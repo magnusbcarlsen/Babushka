@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="test4.css">
+</head>
+
+<body>
+
+    <template class="persontemplate">
+    <div class="person"><h1 class="navn"></h1>
+        <div>Email: <span class="email"></span></div>
+        <img class="foto" src="" alt="">
+    </div>
+
+    </template>
+
+
+    <div class="liste"></div>
+
+
+    <script>
+        let personer;
+        async function hentJson() {
+            let jsonData = await fetch("personer.json");
+            personer = await jsonData.json();
+            vis(personer);
+        }
+
+        let dest = document.querySelector(".liste");
+        let temp = document.querySelector(".persontemplate");
+
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+
+
+
+        function vis(personer) {
+            personer.forEach(person => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+                klon.querySelector(".email").textContent = person.email;
+                klon.querySelector(".foto").src = person.foto;
+                klon.querySelector(".foto").alt = "Billede af" + person.fornavn;
+                dest.appendChild(klon);
+            });
+        };
+    </script>
+</body>
+
+</html>

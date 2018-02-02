@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+<template class="persontemplate">
+    <div class="person"><h1 class="navn"></h1>
+        <div>Email:<span class="email"></span></div>
+    </div>
+
+    </template>
+
+    <div class="liste"></div>
+
+
+    <script>
+        let personer = [{
+            "fornavn": "Magnus",
+            "efternavn": "Bergstrøm",
+            "email": "mcbergstroem@gmail.com"
+        }, {
+            "fornavn": "Dennis",
+            "efternavn": "Bergstrøm",
+            "email": "mcbergstroem@gmail.com"
+        }, {
+            "fornavn": "Hans",
+            "efternavn": "Bergstrøm",
+            "email": "mcbergstroem@gmail.com"
+        }, {
+            "fornavn": "Grethe",
+            "efternavn": "Bergstrøm",
+            "email": "mcbergstroem@gmail.com"
+        }, {
+            "fornavn": "Hopla",
+            "efternavn": "Bergstrøm",
+            "email": "mcbergstroem@gmail.com"
+        }];
+
+        let dest = document.querySelector(".liste");
+        let temp = document.querySelector(".persontemplate");
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+            personer.forEach(person => {
+                dest.innerHTML += person.fornavn + " " + person.efternavn + " " + person.email + "<br>";
+            });
+        };
+
+    </script>
+</body>
+
+</html>

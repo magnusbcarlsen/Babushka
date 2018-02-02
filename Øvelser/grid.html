@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            max-width: 1024px;
+            margin: 0 auto;
+
+        }
+
+        .item {
+            border: 1px solid #000;
+            min-height: 100px;
+        }
+
+        .item-a {
+            grid-column: 1/4;
+        }
+
+        .item-b {
+            grid-column: 2/4;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .item-c {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
+        .item-d {
+            grid-column: 1/4;
+        }
+
+        article {
+            border: 1px solid red;
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .item-a {
+                grid-column: 1/2;
+            }
+            .item-b {
+                grid-template-columns: 1fr;
+                grid-column: 1/2;
+            }
+            .item-c {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+            .item-d {
+                grid-column: 1/4;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item-a">A</div>
+        <div class="item item-b">
+            <article>Where's Einstein, is he with you? Yeah, he's right here. You know, Doc, you left your equipment on all week. My equipment, that reminds me, Marty, you better not hook up to the amplifier. There's a slight possibility for overload. Yeah, I'll keep that in mind.</article>
+            <article>Argh! (he falls off the hoverboard) Get him! (The gang gets on their hoverboards. Marty gets up and sees them coming after him. He gets back on his hoverboard and hovers off once more.) Yeah, we got him! (A Jeep lands in the street. Just as it lands Marty grabs the back of the truck. Whitey tries to grab Marty but misses. Cut to Biff, watching the events.)</article>
+            <article>(All of a sudden all the clocks in the room begin going off. It's very loud.) Are those my clocks I hear? Yeah, it's 8:00. They're late. My experiment worked. They're all exactly twenty-five minutes slow. Wait a minute. Wait a minute, Doc. Are you telling me that it's 8:25?</article>
+            <article>What's wrong? I've come to say goodbye. Goodbye? Well, where ya goin'? I'm going away...and I'm afraid I'll never see you again. Emmett...</article>
+        </div>
+
+
+        <div class="item item-c">C</div>
+        <div class="item item-d">D</div>
+    </div>
+</body>
+</html>

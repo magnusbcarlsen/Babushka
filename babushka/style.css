@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+
+p {
+    color: white;
+}
+
+
+h1 {
+    text-align: center;
+    color: #8d5b02;
+}
+
+#menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    border: 1px solid black;
+
+}
+
+.ret:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+header {
+    height: 400px;
+    background-image: url(imgs/large/boef.jpg);
+}
+
+footer {
+    height: 300px;
+}
+
+button {
+    margin: 21px 10px 0px 10px;
+    justify-items: center;
+    border-radius: 30px;
+    height: 30px;
+    background-color: #8d5b02;
+
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.btn {
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+    [{
+        "fornavn": "Magnus",
+        "efternavn": "Bergstrøm",
+        "email": "mcbergstroem@gmail.com",
+        "foto": "http://magnuskea.dk/kea/01-web/selvportraet.jpeg"
+        }, {
+        "fornavn": "Dennis",
+        "efternavn": "Bergstrøm",
+        "email": "mcbergstroem@gmail.com"
+        }, {
+        "fornavn": "Hans",
+        "efternavn": "Bergstrøm",
+        "email": "mcbergstroem@gmail.com"
+        }, {
+        "fornavn": "Grethe",
+        "efternavn": "Bergstrøm",
+        "email": "mcbergstroem@gmail.com"
+        }, {
+        "fornavn": "Hopla",
+        "efternavn": "Bergstrøm",
+        "email": "mcbergstroem@gmail.com"
+        }]
