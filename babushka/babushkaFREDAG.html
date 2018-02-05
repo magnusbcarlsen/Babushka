@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistro Babushka</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 </head>
 
 <body>
+
 
     <div id="popup">
         <div id="popupcontainer">
@@ -25,7 +27,7 @@
     </div>
 
     <header>
-        <h1>&#8226; Bistro Babushka &#8226;</h1>
+        <h1>&#8226;&#8226;&#9679;&#8226;&#8226;<br>Bistro Babushka<br>&#8226;&#8226;&#9679;&#8226;&#8226;</h1>
     </header>
     <div class="btn">
         <button id="filter-alle">Alle</button>
@@ -57,8 +59,8 @@
     </template>
 
     <footer>
-        <section><address>Addresse: <br>Grønneagade 97<br>1234 København K</address>
-            <aside>Åbningstider:<br> Mandag - Fredag 10.30-22:00</aside>
+        <section><address>Addresse: <br>Grønnegade 97<br>1234 København K</address>
+            <aside>Åbningstider:<br> Mandag - Fredag 10:30-22:00</aside>
         </section>
     </footer>
 
@@ -110,6 +112,7 @@
                     document.querySelector("[data-billede]").alt = "Billede af " + ret.navn;
                     document.querySelector("[data-pris]").textContent = ret.pris;
                     document.querySelector("#closebtn").addEventListener("click", closeModal);
+
                 }
             })
             console.log(myId);

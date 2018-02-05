@@ -2,9 +2,14 @@
     margin: 0;
 }
 
+
 body {
     background-color: black;
 }
+
+
+
+
 
 p {
     padding: 10px;
@@ -19,7 +24,7 @@ h1 {
     color: white;
     text-decoration: underline;
     text-decoration-color: white;
-    margin: 20px;
+    margin: 40px;
 
 
 
@@ -48,6 +53,8 @@ header h1 {
     color: white;
     text-decoration: none;
     font-size: 3em;
+    font-family: 'lobster', cursive;
+    text-align: center;
 
 }
 
@@ -61,12 +68,13 @@ header img {}
     text-align: center;
     position: fixed;
     visibility: hidden;
+    z-index: 1;
 }
 
 #popupcontainer {
     width: 80vw;
     height: 70vh;
-    background: #000000;
+    background: #1a1919;
     border: solid white;
     left: 10vw;
     top: 20vh;
@@ -94,6 +102,14 @@ header img {}
     grid-gap: 20px;
     margin: 0 auto;
     width: 80vw;
+    grid-gap: 30px;
+
+
+}
+
+.ret {
+    cursor: pointer;
+
 
 }
 
@@ -102,18 +118,12 @@ header img {}
 }
 
 .ret:hover {
-    transform: scale(1.05);
-}
-
-.ret {
-    cursor: pointer;
-}
-
-
-
-.ret:nth-child(odd) {
     background-color: #1a1919;
+
 }
+
+
+.ret:nth-child(odd) {}
 
 @media screen and (max-width: 667px) {
     #menu-container {
@@ -121,6 +131,13 @@ header img {}
         margin: 0 auto;
     }
 
+    header {
+        grid-template-columns: 1fr, 3fr, 1fr;
+    }
+    header h1 {
+        grid-column: 2;
+        font-size: 2em;
+    }
 
 }
 
@@ -128,6 +145,13 @@ header img {}
     #menu-container {
         grid-template-columns: repeat(2, 1fr);
         margin: 0 auto;
+    }
+    header {
+        grid-template-columns: 1fr, 2fr, 1fr;
+    }
+    header h1 {
+        grid-column: 2;
+        font-size: 2em;
     }
 }
 
@@ -147,31 +171,35 @@ header img {}
     #menu-container {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
 
 
 footer {
     height: 300px;
-    padding: 30px;
+    margin: 40px;
     color: white;
     text-align: center;
+
 
 }
 
 button {
     margin: 20px;
     justify-items: center;
+    border: 2px solid white;
     border-radius: 30px;
     height: 30px;
     cursor: pointer;
-
-
+    background-color: black;
+    color: white;
 }
 
 button:hover {
     transform: scale(1.5);
-
+    background-color: white;
+    color: black;
 }
 
 .btn {
