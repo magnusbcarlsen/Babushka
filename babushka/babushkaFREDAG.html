@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistro Babushka</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+    <div id="popup">
+        <div id="popupcontainer">
+
+            <img src="" alt="" class="info" data-billede>
+            <h2 class="info" data-navn></h2>
+            <p class="info" data-langbeskrivelse></p>
+            <p>Pris: <span class="info" data-pris></span>,-</p>
+            <button id="closebtn">Close</button>
+
+
+        </div>
+    </div>
+
     <header>
-        <h1>&#42; Bistro Babushka</h1>
+        <h1>&#8226; Bistro Babushka &#8226;</h1>
     </header>
     <div class="btn">
         <button id="filter-alle">Alle</button>
@@ -32,11 +46,12 @@
 
 
     <template data-template>
-      <article>
+      <article class="ret" data-ret>
           <img src="" alt="" class="info" data-billede>
           <h2 class="info" data-navn></h2>
           <p class="info" data-kortbeskrivelse></p>
           <p>Pris: <span class="info" data-pris></span>,-</p>
+
 
         </article>
     </template>
@@ -46,12 +61,6 @@
             <aside>Åbningstider:<br> Mandag - Fredag 10.30-22:00</aside>
         </section>
     </footer>
-
-
-
-
-
-
 
 
 
@@ -80,12 +89,39 @@
                 let klon = menuTemplate.cloneNode(true).content;
                 klon.querySelector("[data-navn]").textContent = ret.navn;
                 klon.querySelector("[data-billede]").src = "imgs/small/" + ret.billede + "-sm.jpg";
-                klon.querySelector("[data-billede]").alt = "billede af " + ret.navn;
+                klon.querySelector("[data-billede]").alt = "Billede af " + ret.navn;
                 klon.querySelector("[data-kortbeskrivelse]").textContent = ret.kortbeskrivelse;
                 klon.querySelector("[data-pris]").textContent = ret.pris;
+                klon.querySelector("[data-ret]").setAttribute("data-id", ret.id);
+                klon.querySelector("[data-ret]").addEventListener("click", openModal);
                 templateModtager.appendChild(klon);
             });
         };
+
+        function openModal() {
+            let myId = this.getAttribute("data-id");
+            let single = retter.find(ret => {
+                //hvis vores myID = ret.id så vis indhold
+                if (myId == ret.id) {
+                    document.querySelector("#popup").style.visibility = "visible";
+                    document.querySelector("[data-navn]").textContent = ret.navn;
+                    document.querySelector("[data-langbeskrivelse]").textContent = ret.langbeskrivelse;
+                    document.querySelector("[data-billede]").src = "imgs/small/" + ret.billede + "-sm.jpg";
+                    document.querySelector("[data-billede]").alt = "Billede af " + ret.navn;
+                    document.querySelector("[data-pris]").textContent = ret.pris;
+                    document.querySelector("#closebtn").addEventListener("click", closeModal);
+                }
+            })
+            console.log(myId);
+
+
+        }
+
+        function closeModal() {
+
+            document.querySelector("#popup").style.visibility = "hidden";
+
+        }
 
 
 

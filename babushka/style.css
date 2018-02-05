@@ -1,49 +1,177 @@
+* {
+    margin: 0;
+}
+
 body {
     background-color: black;
 }
 
 p {
+    padding: 10px;
     color: white;
+    text-align: center;
+
 }
 
 
 h1 {
     text-align: center;
-    color: #8d5b02;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+    margin: 20px;
+
+
+
+}
+
+h2 {
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+
+}
+
+header {
+    display: grid;
+    height: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+
+}
+
+header h1 {
+    grid-column: 2/3;
+    grid-row: 2/2;
+    color: white;
+    text-decoration: none;
+    font-size: 3em;
+
+}
+
+header img {}
+
+#popup {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    visibility: hidden;
+}
+
+#popupcontainer {
+    width: 80vw;
+    height: 70vh;
+    background: #000000;
+    border: solid white;
+    left: 10vw;
+    top: 20vh;
+    position: absolute;
+
+}
+
+#popup img {
+    margin: 10px;
+}
+
+#popup p {
+    margin: 0 auto;
+    width: 40vw;
+}
+
+#popup button {
+    margin: 10px;
+
 }
 
 #menu-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    border: 1px solid black;
+    margin: 0 auto;
+    width: 80vw;
 
 }
+
+.ret img {
+    width: 100%;
+}
+
+.ret:hover {
+    transform: scale(1.05);
+}
+
+.ret {
+    cursor: pointer;
+}
+
+
 
 .ret:nth-child(odd) {
-    background-color: #e0e0e0;
+    background-color: #1a1919;
 }
 
-header {
-    height: 400px;
-    background-image: url(imgs/large/boef.jpg);
+@media screen and (max-width: 667px) {
+    #menu-container {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+
 }
+
+@media screen and (min-width: 668px) and (max-width: 1000px) {
+    #menu-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+    }
+}
+
+@media screen and(min-width:1001px) {
+    main,
+    nav,
+    footer section {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    button {
+        font-size: 1rem;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    #menu-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
 
 footer {
     height: 300px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+
 }
 
 button {
-    margin: 21px 10px 0px 10px;
+    margin: 20px;
     justify-items: center;
     border-radius: 30px;
     height: 30px;
-    background-color: #8d5b02;
+    cursor: pointer;
+
 
 }
 
 button:hover {
-    background-color: orange;
+    transform: scale(1.5);
+
 }
 
 .btn {
